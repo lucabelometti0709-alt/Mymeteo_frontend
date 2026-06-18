@@ -1,0 +1,122 @@
+.forecast-card-stack {
+  min-height: 38px;
+  color: var(--text-secondary, #6b6375);
+}
+
+.forecast-card-label {
+  width: 44px;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--text-primary, #08060d);
+  white-space: nowrap;
+}
+
+.forecast-card-icon {
+  width: 21px;
+  height: 21px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.forecast-card-progress {
+  flex: 1;
+  height: 4px;
+  border-radius: 999px;
+}
+
+.forecast-card-progress .MuiLinearProgress-root {
+  background-color: rgba(123, 145, 184, 0.13);
+}
+
+.forecast-card-progress .MuiLinearProgress-bar {
+  background-color: var(--primary-main, #aa3bff);
+  border-radius: 999px;
+}
+
+.forecast-card-temperature {
+  width: 54px;
+  text-align: right;
+  font-size: 13px;
+  font-weight: 900;
+  color: var(--text-primary, #08060d);
+  white-space: nowrap;
+}
+
+@media (max-width: 1024px) {
+  .forecast-card-label {
+    width: 40px;
+    font-size: 12px;
+  }
+
+  .forecast-card-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .forecast-card-progress {
+    height: 3px;
+  }
+
+  .forecast-card-temperature {
+    width: 50px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .forecast-card-label {
+    width: 35px;
+    font-size: 11px;
+  }
+
+  .forecast-card-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .forecast-card-temperature {
+    width: 45px;
+    font-size: 11px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .forecast-card-stack {
+    color: var(--text-secondary-dark, #9ca3af);
+  }
+
+  .forecast-card-label,
+  .forecast-card-temperature {
+    color: var(--text-primary-dark, #f3f4f6);
+  }
+
+  .forecast-card-progress .MuiLinearProgress-root {
+    background-color: rgba(123, 145, 184, 0.25);
+  }
+
+  .forecast-card-progress .MuiLinearProgress-bar {
+    background-color: var(--primary-main-dark, #c084fc);
+  }
+}
+
+.forecast-card-stack:hover {
+  transition: opacity 0.3s ease;
+  opacity: 0.8;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.forecast-card-stack {
+  animation: slideIn 0.3s ease-out forwards;
+}
